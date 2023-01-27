@@ -1,8 +1,32 @@
 - name: Declare variable at Play level
    hosts: all
+   connection:local
    vars:
      URL: play.example.com
    tasks:
      - name: Access a variable
        ansible.builtin.debug:
          msg: URL == {{URL}}
+
+- name: Declare Variable in another file level
+   hosts: all
+   Connection: local
+   Vars_files:
+     - var.yml
+    tasks:
+     - name: Access Variable
+       ansible.builtin.debug:
+       msg: URL == {{URL}}
+
+##vars_files can also be declared on task level.
+
+- name: Delcare variable at Taks level
+    hosts: all
+    connection: local
+    tasks:
+      - name: Declare and access a variable
+        ansible.builtin.debug:
+          msg: URL == {{URL}}
+        vars:
+          URL: taks.example.com
+
