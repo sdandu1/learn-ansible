@@ -5,3 +5,7 @@
     - name: Print Helo
       ansible.builtin.debug:
         msg: Hello Universe
+        msg: heelo srinivasa
+        msg: how are you doing
+        msg: how old you are
+        msg: which class are you studying
