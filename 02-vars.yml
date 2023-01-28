@@ -31,3 +31,14 @@
       vars:
         URL: task.example.com
 
+## var_files can also be declare at task level.
+
+- name: Declare variable from inventory file
+  hosts: all
+  connection: local
+  tasks:
+    - name:  access a variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+
+
