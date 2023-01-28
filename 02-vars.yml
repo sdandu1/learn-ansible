@@ -9,6 +9,17 @@
       ansible.builtin.debug:
         msg: Print == {{URL}}
 
+##1.1 Play level declare variable in another file.
+- name: Declare variable in another file
+  hosts: all
+  connection: local
+  vars_files:
+    - var1.yml
+  tasks:
+    - name: Access variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+
 ##2 Its declare the variable at tasks level
 - name: Declare variable at Task level
   hosts: all
@@ -19,3 +30,4 @@
         msg: print == {{URL}}
       vars:
         URL: task.example.com
+
