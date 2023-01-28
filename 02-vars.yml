@@ -8,3 +8,14 @@
     - name: Access a variable
       ansible.builtin.debug:
         msg: Print == {{URL}}
+
+##2 Its declare the variable at tasks level
+- name: Declare variable at Task level
+  hosts: all
+  connection: local
+  tasks:
+    - name: Declare and Access a Variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+      vars:
+      URL: task.example.com
