@@ -41,16 +41,14 @@
       ansible.builtin.debug:
        msg: URL == {{URL}}
 
-##Access a fact
 - name: Access a fact
   hosts: all
-  connection: localhost
+  connection: local
   tasks:
     - name: Access fact
       ansible.builtin.debug:
-       msg: Ansible Host name == {{ansible_fqdn}}
+        msg: Anisble Host name == {{ansible_fqdn}}
 
-##Register a varaible
 - name: Register a variable
   hosts: all
   connection: local
@@ -58,9 +56,10 @@
     - name: run a shell command
       ansible.builtin.shell: uptime
       register: out
-    - name: print out
+    - name: Print out
       ansible.builtin.debug:
-        msg: "{{out}}"
-
-
+        msg: "{{out.stdout}}"
+    - name: Set a fact
+      ansible.builtin.set_fact:
+        OUTPUT: "{{out}}"
 
