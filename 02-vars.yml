@@ -60,6 +60,13 @@
       ansible.builtin.debug:
         msg: "{{out}}"
 
+    - name: run a shell command
+      ansible.builtin.shell: date
+      register: out1
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{out1}}"
+
     ## i want to store the variable in the OUTPUT variable and you can use it where ever you want
   #  - name: Set a fact
   #    ansible.builtin.set_fact:
