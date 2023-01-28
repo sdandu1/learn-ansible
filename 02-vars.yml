@@ -53,14 +53,14 @@
   hosts: all
   connection: local
   tasks:
-    - name: run a shell command
+    - name: run a shell command system time
       ansible.builtin.shell: uptime
       register: out
     - name: Print out
       ansible.builtin.debug:
         msg: "{{out}}"
 
-    - name: run a shell command
+    - name: run a shell command for date
       ansible.builtin.shell: date
       register: out1
     - name: Print out
