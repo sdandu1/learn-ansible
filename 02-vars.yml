@@ -39,7 +39,7 @@
   tasks:
     - name:  access a variable
       ansible.builtin.debug:
-        msg: URL == {{URL}}
+       msg: URL == {{URL}}
 
 ##test
 
