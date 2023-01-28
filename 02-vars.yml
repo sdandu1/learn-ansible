@@ -59,7 +59,11 @@
     - name: Print out
       ansible.builtin.debug:
         msg: "{{out}}"
-    - name: Set a fact
-      ansible.builtin.set_fact:
-        OUTPUT: "{{out}}"
+
+    ## i want to store the variable in the OUTPUT variable and you can use it where ever you want
+  #  - name: Set a fact
+  #    ansible.builtin.set_fact:
+  #      OUTPUT: "{{out}}"
+
+
 
