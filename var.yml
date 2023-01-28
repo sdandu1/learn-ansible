@@ -8,6 +8,7 @@
        ansible.builtin.debug:
          msg: URL == {{URL}}
 
+##
 - name: Declare Variable in another file level
    hosts: all
    Connection: local
