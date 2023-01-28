@@ -1,3 +1,4 @@
+##1 Its simple print message
 - name: Demo
   hosts: all
   connection: local
@@ -5,3 +6,6 @@
     - name: Print Helo
       ansible.builtin.debug:
         msg: which class are you studying
+
+
+
